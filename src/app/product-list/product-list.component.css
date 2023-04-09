@@ -1,0 +1,14 @@
+.groupButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+span {
+  margin-bottom: 1rem;
+  display: block;
+}
+
+a:hover {
+  text-decoration: underline;
+}

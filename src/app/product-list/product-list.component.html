@@ -10,12 +10,19 @@
     </a>
   </h3>
 
-  <p *ngIf="product.description">Description: {{ product.description }}</p>
+  <p *ngIf="product.description; else noProduct">
+    Description: {{ product.description }}
+  </p>
 
-  <button type="button" (click)="share()">Share</button>
+<div class="groupButton">
+  <div>
+    <ng-template #noProduct><span>No description</span></ng-template>
 
-  <app-product-alerts [product]="product" (notify)="onNotify()">
-  </app-product-alerts>
+    <button type="button" (click)="share()">Share</button>
+  </div>
+
+  <app-product-alerts [product]="product" (notify)="onNotify()" />
+</div>
 </div>
 
 <!--
